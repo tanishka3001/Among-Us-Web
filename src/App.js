@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+import React from "react";
+import Day from "./Components/day";
+import "./index.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+const App = () => {
+    return (
+        <BrowserRouter>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+            <Routes>
+              <Route path="/" element={<Day />} />  
+            </Routes>
+          </div>
+        </BrowserRouter>
+      );
+};
 export default App;
