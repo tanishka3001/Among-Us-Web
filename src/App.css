@@ -1,6 +1,12 @@
 .App {
   text-align: center;
 }
+@font-face {
+  font-family: 'Gratelos';
+  src: url('../src/asset/gratelos/GratelosDisplay.woff2') format('woff2'); 
+  src:url('../src/asset/gratelos/DM_Sans.zip') format('truestyle')
+  
+}
 
 .App-logo {
   height: 40vmin;
@@ -36,3 +42,5 @@
     transform: rotate(360deg);
   }
 }
+
+
