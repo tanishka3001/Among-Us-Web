@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 
 import "../App.css";
-const NextPage = () => {  // capitalized component name
+const NextPage = () => {  
   const stars = useMemo(() => {
     return Array.from({ length: 100 }, () => ({
       id: Math.random(),

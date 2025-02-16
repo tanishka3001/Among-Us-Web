@@ -33,9 +33,9 @@ const SignUp = () => {
         ))}
       </div>
 
-      {/* Main Content */}
+      
       <div className="relative z-10 flex flex-col justify-center items-center">
-        {/* Full-width Navbar */}
+      
         <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-80 px-10 py-4 flex items-center justify-center shadow-lg">
           <img 
             src="/header_final.png"  
@@ -43,7 +43,7 @@ const SignUp = () => {
             className="h-26 px-4 py-2 w-screen flex flex-col items-center"
           />
         </nav>
-        {/* Additional Image (Visible only in Mobile View) */}
+
         <img 
           src={additionalImage} 
           alt="Additional Visual" 
@@ -51,12 +51,12 @@ const SignUp = () => {
         />
 
 
-        {/* Centered & Responsive Text */}
+
         <h1 className="text-white text-5xl font-gratelos sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl font-[400] leading-none text-center mt-[-60px]">
           Sign in with your VIT Email ID
         </h1>
 
-        {/* Sign-in Button */}
+       
         <button className="relative flex mt-10 items-center justify-center px-8 bg-[#c01701] border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]">
           <img src={google} alt="Description" className="w-8 sm:w-10 md:w-14 h-auto mr-4 md:mr-7" />
           <span className="text-[#ffcbd0] font-gratelos text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[4rem] font-[400]">Sign in</span>
