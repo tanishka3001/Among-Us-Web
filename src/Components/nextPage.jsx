@@ -44,19 +44,19 @@ const NextPage = () => {
 
       {/* Main Content */}
       <div className="relative z-10 flex flex-col justify-center items-center text-center px-6">
-        <p className="text-white font-dm mt-14 text-3xl sm:text-4xl md:text-5xl font-light leading-snug max-w-[1200px]">
+        <p className="text-white font-dmSans mt-20 text-2xl sm:text-4xl md:text-4xl leading-snug max-w-[1200px]">
           On the next page, you will be asked to pick a slot, <br />
           there are two days with six slots in each day. <br />
-          Slots are on a <span className="font-semibold">first come first serve basis.</span> <br /><br />
+          Slots are on a <span className="font-semibold font-dmSans">first come first serve basis.</span> <br /><br />
           Make sure you are free during that slot. <br /><br />
           If you are coming with friends who have registered, <br />
           make them pick the same slot as you.
         </p>
         
 
-        <button className="relative flex mt-14 items-center justify-center px-11  bg-[#c01701] border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]">
+        <button className="relative flex mt-10 items-center justify-center px-11  bg-[#c01701] border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]">
           
-          <span className="text-[#ffcbd0] font-gratelos text-[4rem] font-600">Next</span>
+          <span className="text-[#ffcbd0] font-gratelos text-[3rem] font-600">Next</span>
           <div className="absolute inset-0 rounded-full border-[10px] border-[#74202f] -z-10"></div>
         </button>
       </div>

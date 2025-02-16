@@ -4,7 +4,8 @@
 @font-face {
   font-family: 'Gratelos';
   src: url('../src/asset/gratelos/GratelosDisplay.woff2') format('woff2'); 
-  src:url('../src/asset/gratelos/DM_Sans.zip') format('truestyle')
+  src:url('../src/asset/gratelos/DM_Sans.zip') format('truestyle');
+  src:url('../src/asset/gratelos/DMSans-VariableFont_opsz\,wght.woff') format('truestyle');
   
 }
 
@@ -50,7 +51,7 @@
 }
 
 * {
-  font-family: "Gratelos", sans-serif !important;
+  font-family: "Gratelos", sans-serif ;
 }
 
 

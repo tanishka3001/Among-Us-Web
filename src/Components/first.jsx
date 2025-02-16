@@ -108,9 +108,9 @@ const FirstPage = () => {
         />
       </nav>
 
-      <div className="relative z-10 flex flex-col mt-20 md:mt-28 justify-center items-center text-center px-4 md:px-6">
+      <div className="relative z-10 flex flex-col mt-20 md:mt-28 justify-center items-center text-center px-4 md:px-6 ">
         <motion.p
-          className="text-white font-gratelos text-7xl md:text-9xl font-light w-full md:w-[46.7rem]"
+          className="text-white font-gratelos text-5xl md:text-8xl font-light w-full md:w-[36.7rem]"
           variants={textVariants}
           initial="initial"
           animate={
@@ -125,7 +125,7 @@ const FirstPage = () => {
         <motion.img
           src={textImg}
           alt="Description"
-          className="max-w-[17rem] md:max-w-[30rem] h-auto mb-16 md:mb-28"
+          className="max-w-[12rem] md:max-w-[23rem] h-auto mb-16 md:mb-24"
           variants={imageVariants}
           initial="initial"
           animate={
@@ -141,9 +141,9 @@ const FirstPage = () => {
           }`}
         >
           <motion.button
-            className="relative flex items-center justify-center py-4 md:py-8 px-6 md:px-11 bg-[#c01701] border-[4px] md:border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]"
+            className="relative flex items-center justify-center py-3 md:py-4 px-5 md:px-9 bg-[#c01701] border-[4px] md:border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17] mb-7"
           >
-            <span className="text-[#ffcbd0] font-gratelos px-3 md:px-4 text-4xl md:text-[5rem] font-600">
+            <span className="text-[#ffcbd0] font-gratelos px-2 md:px-3 text-3xl md:text-[3rem] font-600">
               Start
             </span>
             <div className="absolute inset-0 rounded-full border-[6px] md:border-[10px] border-[#74202f] -z-10"></div>
