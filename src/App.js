@@ -1,5 +1,7 @@
 import React from "react";
-import Day from "./Components/day";
+import Slots from "./Components/slots";
+import Submission from "./Components/finalSubmission";
+import Thankyou from "./Components/thankYou";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 const App = () => {
@@ -7,7 +9,9 @@ const App = () => {
         <BrowserRouter>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
             <Routes>
-              <Route path="/" element={<Day />} />  
+              <Route path="/" element={<Slots />} />  
+              <Route path="/submission" element={<Submission />} />
+              <Route path="/thank-you" element={<Thankyou />} />
             </Routes>
           </div>
         </BrowserRouter>

@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+@font-face {
+  font-family: "Gratelos";
+  src: url("../public/fonts/GratelosDisplay.woff2") format("woff2"),
+       url("../public/fonts/GratelosDisplay.woff") format("woff");
+}
+
+* {
+  font-family: "Gratelos", sans-serif !important;
+}
+
