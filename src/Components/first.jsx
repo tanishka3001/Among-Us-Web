@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "../App.css";
 import textImg from "../asset/AMONG_US_TEXT.png";
-
+import Header from"./header.jsx";
 const FirstPage = () => {
   const [animate, setAnimate] = useState(false);
   const [showButton, setShowButton] = useState(false);
@@ -83,7 +83,7 @@ const FirstPage = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen flex flex-col justify-center items-center overflow-hidden">
+    <div className="relative w-screen h-screen justify-center items-center flex flex-col overflow-hidden">
       <div className="absolute inset-0 bg-black">
         {stars.map((star) => (
           <div
@@ -100,15 +100,11 @@ const FirstPage = () => {
         ))}
       </div>
 
-      <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-80 px-10 py-4 flex items-center justify-center shadow-lg">
-        <img 
-          src="/header_final.png"  
-          alt="Navbar Logo" 
-          className="h-26 px-4 py-2 w-screen flex flex-col items-center"
-        />
-      </nav>
+      <div className="absolute top-0 left-0 w-full">
+        <Header />
+      </div>
 
-      <div className="relative z-10 flex flex-col mt-20 md:mt-28 justify-center items-center text-center px-4 md:px-6 ">
+      <div className="relative z-10 flex flex-col  md:mt-28 justify-center items-center text-center px-4 md:px-6 ">
         <motion.p
           className="text-white font-gratelos text-5xl md:text-8xl font-light w-full md:w-[36.7rem]"
           variants={textVariants}
@@ -141,9 +137,9 @@ const FirstPage = () => {
           }`}
         >
           <motion.button
-            className="relative flex items-center justify-center py-3 md:py-4 px-5 md:px-9 bg-[#c01701] border-[4px] md:border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17] mb-7"
+            className="relative flex items-center justify-center py-3 md:py-4 px-7 md:px-9 bg-[#c01701] border-[4px] md:border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17] mb-7"
           >
-            <span className="text-[#ffcbd0] font-gratelos px-2 md:px-3 text-3xl md:text-[3rem] font-600">
+            <span className="text-[#ffcbd0] font-gratelos px-2 md:px-3 text-4xl md:text-[3rem] font-600">
               Start
             </span>
             <div className="absolute inset-0 rounded-full border-[6px] md:border-[10px] border-[#74202f] -z-10"></div>

@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-
+import Header from"./header.jsx";
 import "../App.css";
 const NextPage = () => {  
   const stars = useMemo(() => {
@@ -13,7 +13,8 @@ const NextPage = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen flex flex-col justify-center items-center overflow-hidden">
+    
+    <div className="relative justify-center items-center w-screen h-screen flex flex-col  overflow-hidden">
       {/* Twinkling Stars Background */}
       <div className="absolute inset-0 bg-black">
         {stars.map((star) => (
@@ -33,17 +34,12 @@ const NextPage = () => {
 
       
       
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-80 px-10 py-4 flex items-center justify-center shadow-lg">
-          <img 
-            src="/header_final.png"  
-            alt="Navbar Logo" 
-            className="h-26 px-4 py-2 w-screen flex flex-col items-center"
-          />
-        </nav>
+      <div className="absolute top-0 left-0 w-full">
+        <Header />
+      </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col justify-center items-center text-center px-6">
+      <div className="relative z-10 flex flex-col justify-center items-center text-center mt-10 px-6 mt-16 md:mt-0">
         <p className="text-white font-dmSans mt-20 text-2xl sm:text-4xl md:text-4xl leading-snug max-w-[1200px]">
           On the next page, you will be asked to pick a slot, <br />
           there are two days with six slots in each day. <br />
@@ -54,9 +50,9 @@ const NextPage = () => {
         </p>
         
 
-        <button className="relative flex mt-10 items-center justify-center px-11  bg-[#c01701] border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]">
+        <button className="relative flex mb-10 mt-8 items-center justify-center px-11  bg-[#c01701] border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]">
           
-          <span className="text-[#ffcbd0] font-gratelos text-[3rem] font-600">Next</span>
+          <span className="text-[#ffcbd0] font-gratelos text-[2rem] md:text-[3rem] font-600">Next</span>
           <div className="absolute inset-0 rounded-full border-[10px] border-[#74202f] -z-10"></div>
         </button>
       </div>
