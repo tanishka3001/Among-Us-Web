@@ -2,29 +2,19 @@ import React, { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "../App.css";
 import textImg from "../asset/AMONG_US_TEXT.png";
-import Header from"./header.jsx";
+import Header from "./header.jsx";
+
 const FirstPage = () => {
   const [animate, setAnimate] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [initialEase, setInitialEase] = useState(false);
 
   useEffect(() => {
-    const startAnimation = () => {
-      setInitialEase(true);
-      setTimeout(() => {
-        setAnimate(true);
-      }, 500);
-    };
-
-    window.addEventListener("keydown", startAnimation);
-    window.addEventListener("touchstart", startAnimation);
-    window.addEventListener("mousedown", startAnimation);
-
-    return () => {
-      window.removeEventListener("keydown", startAnimation);
-      window.removeEventListener("touchstart", startAnimation);
-      window.removeEventListener("mousedown", startAnimation);
-    };
+    // Start animation automatically when the page loads
+    setInitialEase(true);
+    setTimeout(() => {
+      setAnimate(true);
+    }, 500);
   }, []);
 
   useEffect(() => {
@@ -104,7 +94,7 @@ const FirstPage = () => {
         <Header />
       </div>
 
-      <div className="relative z-10 flex flex-col  md:mt-28 justify-center items-center text-center px-4 md:px-6 ">
+      <div className="relative z-10 flex flex-col md:mt-28 justify-center items-center text-center px-4 md:px-6">
         <motion.p
           className="text-white font-gratelos text-5xl md:text-8xl font-light w-full md:w-[36.7rem]"
           variants={textVariants}
