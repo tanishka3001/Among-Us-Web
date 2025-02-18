@@ -3,10 +3,12 @@ import axios from "axios";
 import Background from "./background";
 import "../App.css";
 import Header from "./header.jsx";
+import { useNotification } from "./NotificationProvider.jsx";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 const Slots = () => {
     const navigate = useNavigate();
+    const notify=useNotification();
     const location = useLocation();
     const data = location.state;
     const [slots, setSlots] = useState([]);
@@ -14,30 +16,13 @@ const Slots = () => {
     const handleSlotSelection = (slotId) => {
         setSelectedSlot(slotId);
     };
-    const sendBooking = async () => {
-        try {
-            const response = await axios.post("https://among-us-eosin.vercel.app/book", {"slotId": selectedSlot }, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem("JWT_Token")}`
-                },
-
-            });
-            if (response.status === 201){
-                console.log(response.data);
-                navigate("/submission");
-            }
-        }
-        catch (err) {
-            console.log(err);
-        }
-    };
+  
 
     const handleNext = () => {
         if (!selectedSlot) {
-            alert("Please select a slot before proceeding.");
+            notify("Please select a slot before proceeding.","warning"); 
         } else {
-            console.log(selectedSlot);
-            sendBooking();
+            navigate("/submission",{state: selectedSlot});
         }
     };
 

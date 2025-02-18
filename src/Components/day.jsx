@@ -3,8 +3,10 @@ import Background from "./background";
 import "../App.css";
 import Header from "./header.jsx";
 import { useNavigate } from "react-router-dom";
+import { useNotification } from "./NotificationProvider.jsx";
 const Day = () => {
   const navigate = useNavigate();
+  const notify=useNotification();
   const [selectedDay, setSelectedDay] = useState(null);
 
   const handleSelection = (day) => {
@@ -13,9 +15,8 @@ const Day = () => {
 
   const handleNext = () => {
     if (!selectedDay)
-      alert("Please select one day before proceeding.");
+      notify("Please select one day before proceeding.","warning");
     else {
-      console.log(selectedDay);
       navigate("/slots", { state: selectedDay });
     }
   };

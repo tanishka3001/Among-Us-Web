@@ -30,7 +30,7 @@ const ProtectBooking = () => {
     )
   }
   if (hasBooking != null)
-  return hasBooking ? <Navigate to="/submission" /> :<Outlet /> ;
+  return hasBooking ? <Navigate to="/thank-you" /> :<Outlet /> ;
 };
 
 export default ProtectBooking;

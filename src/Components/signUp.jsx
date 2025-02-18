@@ -29,11 +29,12 @@ const SignUp = () => {
                   Authorization: `Bearer ${localStorage.getItem("JWT_Token")}`
               }
           });
+          console.log(booking.status);
 
-          if(booking.data.message==="You haven't booked any slots yet" )
+          if(booking.status===204 )
             navigate("/nextpg");
           else
-          navigate("/submission");
+          navigate("/thank-you");
          }
     } catch (error) {
         console.error("Login failed:", error);

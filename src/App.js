@@ -5,8 +5,8 @@ import SignUp from "./Components/signUp";
 import Day from "./Components/day";
 import NextPage from "./Components/nextPage";
 import FirstPage from "./Components/first";
-import ProtectRoutes from "./Components/protectRoutes";
 import ProtectBooking from "./Components/protectBooking";
+import ProtectRoutes from "./Components/protectRoutes";
 import Slots from "./Components/slots";
 import Submission from "./Components/finalSubmission";
 import Thankyou from "./Components/thankYou";
@@ -30,7 +30,9 @@ const App = () => {
               </Route>
               </Route>
               <Route element={<ProtectRoutes/>}>
+              <Route element={<ProtectBooking />}>
               <Route path="/submission" element={<Submission />} />
+              </Route>
               </Route>
               <Route path="/thank-you" element={<Thankyou />} />
             </Routes>
