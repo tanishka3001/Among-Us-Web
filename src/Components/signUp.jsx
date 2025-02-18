@@ -2,8 +2,44 @@ import React, { useMemo } from "react";
 import "../App.css";
 import google from "../asset/Vectorgoogle.png";
 import additionalImage from "../asset/AMONG_US_TEXT.png";
-
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { auth, provider, signInWithPopup } from "./firebase";
 const SignUp = () => {
+  const navigate= useNavigate();
+  const handleLogin = async () => {
+    try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        const token = await user.getIdToken();
+        localStorage.setItem("Token", token);
+        const response = await axios.post(
+          "https://among-us-eosin.vercel.app/auth" ,
+            {}, 
+            { headers: { Authorization: `Bearer ${token}` } }
+        );
+         if (response.status === 200) {
+            localStorage.setItem("JWT_Token", response.data.token);
+            const booking = await axios.get(`https://among-us-eosin.vercel.app/book`, {
+              headers: {
+                  Authorization: `Bearer ${localStorage.getItem("JWT_Token")}`
+              }
+          });
+
+          if(booking.data.message==="You haven't booked any slots yet" )
+            navigate("/nextpg");
+          else
+          navigate("/submission");
+         }
+    } catch (error) {
+        console.error("Login failed:", error);
+        if (error.response) {
+            alert(`Error: ${error.response.data.message}`);
+        } else {
+            alert("Login failed. Please try again.");
+        }
+    }
+};
   const stars = useMemo(() => {
     return Array.from({ length: 100 }, () => ({
       id: Math.random(),
@@ -57,7 +93,7 @@ const SignUp = () => {
         </h1>
 
        
-        <button className="relative flex mt-10 items-center justify-center px-8 bg-[#c01701] border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]">
+        <button onClick={handleLogin} className="relative flex mt-10 items-center justify-center px-8 bg-[#c01701] border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]">
           <img src={google} alt="Description" className="w-8 sm:w-10 md:w-14 h-auto mr-4 md:mr-7" />
           <span className="text-[#ffcbd0] font-gratelos text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[4rem] font-[400]">Sign in</span>
           <div className="absolute inset-0 rounded-full border-[10px] border-[#74202f] -z-10"></div>

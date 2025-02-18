@@ -17,7 +17,7 @@ const TwinklingStars = () => {
   }, []);
 
   return (
-    <div className="absoulte  w-screen h-screen overflow-hidden bg-black absolute top-0 left-0">
+    <div className=" w-screen h-screen z-10 bg-black absolute top-0 left-0">
       {stars.map((star) => (
         <div
           key={star.id}
