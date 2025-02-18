@@ -41,7 +41,7 @@ const NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col justify-center items-center text-center mt-10 px-6 mt-16 md:mt-0">
+      <div className="relative z-10 flex flex-col justify-center items-center text-center mt-10 px-6  md:mt-0">
         <p className="text-white font-dmSans mt-20 text-2xl sm:text-4xl md:text-4xl leading-snug max-w-[1200px]">
           On the next page, you will be asked to pick a slot, <br />
           there are two days with six slots in each day. <br />

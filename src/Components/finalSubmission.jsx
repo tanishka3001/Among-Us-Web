@@ -39,27 +39,26 @@ const Submission = () => {
             <Header />
                 <div className="flex flex-col md:flex-row justify-center items-center z-10 md:space-x-20">
                     <div className="flex flex-col  items-center space-y-2">
-                        <p className="mt-20 text-9xl">
+                        <p className=" mt-8 md:mt-20 text-7xl md:text-9xl">
                             FINAL
                         </p>
-                    <p className="text-8xl">
+                    <p className="text-6xl md:text-8xl">
                         SUBMISSION
                     </p>
-
                 </div>
-            <div className="flex flex-col  gap-14 items-center">
+            <div className="flex flex-col gap-5 md:gap-14 items-center">
                     <div>
-                        <button className="bg-[#03CEA4] border-[#006450] border-4 mt-28 text-white px-3 py-2 text-5xl rounded-xl">
+                        <button className="bg-[#03CEA4] border-[#006450] border-4  mt-8 md:mt-28 text-white px-3 py-2 text-4xl md:text-5xl rounded-xl">
                             {data.day}
                         </button></div>
                     <div>
-                        <button className="bg-[#009ACF] border-[#004C67] border-4 text-white px-3 py-4 text-5xl rounded-xl">
+                        <button className="bg-[#009ACF] border-[#004C67] border-4 text-white px-3 py-4 text-4xl md:text-5xl rounded-xl">
                             {data.timing}
                         </button></div>
                 </div>
             </div>
             <div className="flex justify-center mt-8">
-                <div className="flex flex-col md:flex-row text-lg md:text-2xl py-6 md:py-0 space-y-4 md:space-y-0 md:space-x-14 mt-8 relative z-10">
+                <div className="flex flex-col md:flex-row text-lg md:text-2xl py-6 md:py-0 space-y-4 md:space-y-0 md:space-x-14 mt-0 md:mt-8 relative z-10">
                     <button onClick={()=>navigate("/")} className="bg-red-600 text-white px-10 py-1 rounded-xl shadow-md hover:bg-red-700">
                         Back
                     </button>

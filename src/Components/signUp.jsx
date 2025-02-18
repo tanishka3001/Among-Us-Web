@@ -10,6 +10,7 @@ import Header from "./header.jsx";
 
 const SignUp = () => {
   const navigate= useNavigate();
+  const notify = useNotification();
   const handleLogin = async () => {
     try {
         const result = await signInWithPopup(auth, provider);
@@ -36,10 +37,10 @@ const SignUp = () => {
          }
     } catch (error) {
         console.error("Login failed:", error);
-        if (error.response) {
-            alert(`Error: ${error.response.data.message}`);
+        if (error.response) {         
+            notify(`Error: ${error.response.data.message}`, "error");
         } else {
-            alert("Login failed. Please try again.");
+           notify("Login failed. Please try again.","error");
         }
     }
 };
@@ -52,7 +53,7 @@ const SignUp = () => {
       animationDelay: Math.random() * 3 + "s",
     }));
   }, []);
-  const notify = useNotification();
+  
 
   useEffect(() => {
     notify("✅ Welcome to Sign Up Page!", "success");

@@ -25,7 +25,7 @@ const Day = () => {
       <Background />
       <Header />
       <div className="flex flex-col items-center z-10">
-        <p className="text-3xl md:text-5xl text-center mt-28 mb-4 relative z-10">
+        <p className="text-3xl md:text-5xl text-center mt-28 md:mt-14 mb-4 relative z-10">
           Choose what you opted for during registration
         </p>
 

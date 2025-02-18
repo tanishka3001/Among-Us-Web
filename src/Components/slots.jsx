@@ -77,7 +77,7 @@ const Slots = () => {
             <Background />
             <Header />
             <div className="flex justify-center">
-                <div className="flex flex-col md:flex-row z-10 text-xl md:text-5xl mt-12 md:space-x-4">
+                <div className="flex flex-col md:flex-row z-10 text-xl md:text-5xl  mt-8 md:mt-12 md:space-x-4">
                     <p>Choose Your Slot</p>
                     {
                         slots.length === 0 ? "" :
@@ -89,7 +89,7 @@ const Slots = () => {
                 </div>
             </div>
             <div className="flex justify-center items-center">
-                <div className="flex flex-wrap w-1/2 justify-center text-center text-2xl relative z-10 py-5 md:space-x-8 space-y-3">
+                <div className="flex flex-wrap w-1/2 justify-center text-center text-lg md:text-2xl relative z-10 pt-5 md:py-5 md:space-x-8 space-y-3">
                     {slots.map((slot, index) => (
                         <div key={slot.id} className="flex items-center md:space-x-2">
                             <input
@@ -107,7 +107,7 @@ const Slots = () => {
                             >
                                 <p className="text-[#d2eff8]">Slot {index + 1}</p>
                                 {slot.timing}
-                                <span className="flex text-xl justify-center">
+                                <span className="flex text-sm md:text-xl justify-center">
                                     Seats available:&nbsp;
                                     <p className="text-yellow-400">{slot.vacancies}</p>
                                 </span>
@@ -117,7 +117,7 @@ const Slots = () => {
                 </div>
             </div>
             <div className="flex justify-center">
-                <div className="flex flex-col md:flex-row text-lg md:text-2xl py-6 md:py-0 space-y-4 md:space-y-0 md:space-x-14 mt-8 relative z-10">
+                <div className="flex flex-col md:flex-row text-lg md:text-2xl  space-y-2 md:space-y-0 md:space-x-14 mt-8 relative z-10">
                     <button onClick={()=>navigate("/day")} className="bg-red-600 text-white px-10 py-1 rounded-xl shadow-md hover:bg-red-700">
                         Back
                     </button>
