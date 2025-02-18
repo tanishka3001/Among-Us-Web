@@ -1,6 +1,6 @@
 function Header() {
     return ( 
-        <div className="flex justify-between z-[10]">
+        <div className="flex py-4 px-4 justify-between z-[10]">
                 <div>
                     <img src="./Mask group.png" alt="vit logo" className="w-[80px] md:w-[160px] h-auto" />
                 </div>
