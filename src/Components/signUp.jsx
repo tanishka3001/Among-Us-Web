@@ -1,4 +1,5 @@
-import React, { useMemo } from "react";
+import React, { useEffect,useMemo } from "react";
+import { useNotification } from "./NotificationProvider.jsx";
 import "../App.css";
 import google from "../asset/Vectorgoogle.png";
 import additionalImage from "../asset/AMONG_US_TEXT.png";
@@ -13,6 +14,12 @@ const SignUp = () => {
       size: Math.random() * 2 + 1 + "px",
       animationDelay: Math.random() * 3 + "s",
     }));
+  }, []);
+  const notify = useNotification();
+
+  useEffect(() => {
+    notify("✅ Welcome to Sign Up Page!", "success");
+    
   }, []);
 
   return (
