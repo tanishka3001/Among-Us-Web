@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "../App.css";
 import textImg from "../asset/AMONG_US_TEXT.png";
 import { useNavigate } from "react-router-dom";
+import Header from "./header.jsx";
 
 const FirstPage = () => {
   const navigate= useNavigate();
@@ -11,22 +12,11 @@ const FirstPage = () => {
   const [initialEase, setInitialEase] = useState(false);
 
   useEffect(() => {
-    const startAnimation = () => {
-      setInitialEase(true);
-      setTimeout(() => {
-        setAnimate(true);
-      }, 500);
-    };
-
-    window.addEventListener("keydown", startAnimation);
-    window.addEventListener("touchstart", startAnimation);
-    window.addEventListener("mousedown", startAnimation);
-
-    return () => {
-      window.removeEventListener("keydown", startAnimation);
-      window.removeEventListener("touchstart", startAnimation);
-      window.removeEventListener("mousedown", startAnimation);
-    };
+    // Start animation automatically when the page loads
+    setInitialEase(true);
+    setTimeout(() => {
+      setAnimate(true);
+    }, 500);
   }, []);
 
   useEffect(() => {
@@ -41,8 +31,8 @@ const FirstPage = () => {
       id: Math.random(),
       top: Math.random() * 100 + "vh",
       left: Math.random() * 100 + "vw",
-      size: Math.random() * 5 + 3 + "px",
-      animationDelay: Math.random() * 4 + "s",
+      size: Math.random() * 2 + 1 + "px",
+      animationDelay: Math.random() * 2 + "s",
     }));
   }, []);
 
@@ -85,7 +75,7 @@ const FirstPage = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen flex flex-col justify-center items-center overflow-hidden">
+    <div className="relative w-screen h-screen justify-center items-center flex flex-col overflow-hidden">
       <div className="absolute inset-0 bg-black">
         {stars.map((star) => (
           <div
@@ -102,17 +92,13 @@ const FirstPage = () => {
         ))}
       </div>
 
-      <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-80 px-10 py-4 flex items-center justify-center shadow-lg">
-        <img 
-          src="/header_final.png"  
-          alt="Navbar Logo" 
-          className="h-26 px-4 py-2 w-screen flex flex-col items-center"
-        />
-      </nav>
+      <div className="absolute top-0 left-0 w-full">
+        <Header />
+      </div>
 
-      <div className="relative z-10 flex flex-col mt-20 md:mt-28 justify-center items-center text-center px-4 md:px-6">
+      <div className="relative z-10 flex flex-col md:mt-28 justify-center items-center text-center px-4 md:px-6">
         <motion.p
-          className="text-white font-gratelos text-7xl md:text-9xl font-light w-full md:w-[46.7rem]"
+          className="text-white font-gratelos text-5xl md:text-8xl font-light w-full md:w-[36.7rem]"
           variants={textVariants}
           initial="initial"
           animate={
@@ -127,7 +113,7 @@ const FirstPage = () => {
         <motion.img
           src={textImg}
           alt="Description"
-          className="max-w-[17rem] md:max-w-[30rem] h-auto mb-16 md:mb-28"
+          className="max-w-[12rem] md:max-w-[23rem] h-auto mb-16 md:mb-24"
           variants={imageVariants}
           initial="initial"
           animate={
@@ -145,7 +131,7 @@ const FirstPage = () => {
           <motion.button onClick={()=>navigate("/sign-in")}
             className="relative flex items-center justify-center py-4 md:py-8 px-6 md:px-11 bg-[#c01701] border-[4px] md:border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]"
           >
-            <span className="text-[#ffcbd0] font-gratelos px-3 md:px-4 text-4xl md:text-[5rem] font-600">
+            <span className="text-[#ffcbd0] font-gratelos px-2 md:px-3 text-4xl md:text-[3rem] font-600">
               Start
             </span>
             <div className="absolute inset-0 rounded-full border-[6px] md:border-[10px] border-[#74202f] -z-10"></div>
