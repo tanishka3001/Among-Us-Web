@@ -55,12 +55,6 @@ const SignUp = () => {
     }));
   }, []);
   
-
-  useEffect(() => {
-    notify("✅ Welcome to Sign Up Page!", "success");
-    
-  }, []);
-
   return (
     <div className="relative w-screen h-screen flex flex-col justify-center items-center overflow-hidden">
       {/* Twinkling Stars Background */}
