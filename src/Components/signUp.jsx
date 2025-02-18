@@ -10,8 +10,8 @@ const SignUp = () => {
       id: Math.random(),
       top: Math.random() * 100 + "vh",
       left: Math.random() * 100 + "vw",
-      size: Math.random() * 5 + 3 + "px",
-      animationDelay: Math.random() * 4 + "s",
+      size: Math.random() * 2 + 1 + "px",
+      animationDelay: Math.random() * 3 + "s",
     }));
   }, []);
 
