@@ -1,7 +1,9 @@
 import React, { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from"./header.jsx";
 import "../App.css";
 const NextPage = () => {  
+  const navigate=useNavigate();
   const stars = useMemo(() => {
     return Array.from({ length: 100 }, () => ({
       id: Math.random(),
@@ -50,7 +52,7 @@ const NextPage = () => {
         </p>
         
 
-        <button className="relative flex mb-10 mt-8 items-center justify-center px-11  bg-[#c01701] border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]">
+        <button onClick={()=>navigate("/day")} className="relative flex mt-14 items-center justify-center px-11  bg-[#c01701] border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]">
           
           <span className="text-[#ffcbd0] font-gratelos text-[2rem] md:text-[3rem] font-600">Next</span>
           <div className="absolute inset-0 rounded-full border-[10px] border-[#74202f] -z-10"></div>

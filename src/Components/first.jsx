@@ -2,9 +2,11 @@ import React, { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "../App.css";
 import textImg from "../asset/AMONG_US_TEXT.png";
+import { useNavigate } from "react-router-dom";
 import Header from "./header.jsx";
 
 const FirstPage = () => {
+  const navigate= useNavigate();
   const [animate, setAnimate] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [initialEase, setInitialEase] = useState(false);
@@ -126,8 +128,8 @@ const FirstPage = () => {
             showButton ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
-          <motion.button
-            className="relative flex items-center justify-center py-3 md:py-4 px-7 md:px-9 bg-[#c01701] border-[4px] md:border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17] mb-7"
+          <motion.button onClick={()=>navigate("/sign-in")}
+            className="relative flex items-center justify-center py-4 md:py-8 px-6 md:px-11 bg-[#c01701] border-[4px] md:border-[7px] border-[#942336] rounded-full shadow-lg shadow-[#5a0f17]"
           >
             <span className="text-[#ffcbd0] font-gratelos px-2 md:px-3 text-4xl md:text-[3rem] font-600">
               Start
