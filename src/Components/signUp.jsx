@@ -1,4 +1,4 @@
-import React, { useEffect,useMemo } from "react";
+import React, { useEffect,useMemo, useState } from "react";
 import { useNotification } from "./NotificationProvider.jsx";
 import "../App.css";
 import google from "../asset/Vectorgoogle.png";
@@ -17,25 +17,26 @@ const SignUp = () => {
         const user = result.user;
         const token = await user.getIdToken();
         localStorage.setItem("Token", token);
+        notify("Please Wait, loading","success");
         const response = await axios.post(
           "https://among-us-eosin.vercel.app/auth" ,
             {}, 
             { headers: { Authorization: `Bearer ${token}` } }
         );
          if (response.status === 200) {
+         
             localStorage.setItem("JWT_Token", response.data.token);
             const booking = await axios.get(`https://among-us-eosin.vercel.app/book`, {
               headers: {
                   Authorization: `Bearer ${localStorage.getItem("JWT_Token")}`
               }
           });
-          console.log(booking.status);
-
           if(booking.status===204 )
             navigate("/nextpg");
           else
           navigate("/thank-you");
          }
+
     } catch (error) {
         console.error("Login failed:", error);
         if (error.response) {         
