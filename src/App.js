@@ -10,6 +10,7 @@ import ProtectRoutes from "./Components/protectRoutes";
 import Slots from "./Components/slots";
 import Submission from "./Components/finalSubmission";
 import Thankyou from "./Components/thankYou";
+import Gameroom from "./Components/gameroom";
 const App = () => {
     return (
        <NotificationProvider>
@@ -17,6 +18,7 @@ const App = () => {
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
             <Routes>
               <Route path="/sign-in" element={<SignUp />} /> 
+              <Route path="/gameroom" element={<Gameroom />} />
               <Route element={<ProtectRoutes />}>
               <Route element={<ProtectBooking />}>
               <Route path="/day" element={<Day />} /> 
